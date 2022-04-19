@@ -1,14 +1,14 @@
-def newGit("repo")
+def newGit(repo)
 {
-     git ${"repo"}
+     git "${repo}"
 }
 def newMaven()
 {
     sh 'mvn package'
 }
-def newDeploy("ip")
+def newDeploy(ip,filename)
 {
-    scp /home/ubuntu/.jenkins/workspace/SharedLibrary ubuntu@${"ip"}:/var/libltomcat9/webapps/sagar.war
+     scp /home/ubuntu/.jenkins/workspace/SharedLibrary ubuntu@"${ip}":/var/libltomcat9/webapps/"${filename}"
 }
 def newTest("appname")
 {
